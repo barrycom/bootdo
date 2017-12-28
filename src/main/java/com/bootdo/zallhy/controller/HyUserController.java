@@ -47,6 +47,7 @@ public class HyUserController {
 	public PageUtils list(@RequestParam Map<String, Object> params){
 		//查询列表数据
         Query query = new Query(params);
+
 		List<HyUserDO> hyUserList = hyUserService.list(query);
 		int total = hyUserService.count(query);
 		PageUtils pageUtils = new PageUtils(hyUserList, total);
